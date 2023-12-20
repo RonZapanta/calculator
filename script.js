@@ -8,7 +8,7 @@ function appendToDisplay(value) {
     } else {
         operand2 += value;
     }
-    //if value is + then setOperator(value)
+   
     if (value == '+'){
         setOperator(value);
     } else {
