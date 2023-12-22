@@ -10,10 +10,12 @@ function appendToDisplay(value) {
     }
 
     switch (value) {
-        case '+': setOperator(value);
-        case '-': setOperator(value);
-        case '*':setOperator(value);
-        case '/': setOperator(value);
+        case '+':
+        case '-':
+        case '*':
+        case '/':
+            setOperator(value);
+            break;
         default: document.getElementById('display').value += value;
     }
 }
