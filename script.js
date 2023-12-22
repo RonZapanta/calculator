@@ -13,6 +13,8 @@ function appendToDisplay(value) {
         setOperator(value);
     } else if (value == '-') {
         setOperator(value);
+    } else if (value == '*') {
+        setOperator(value);
     }
     else {
         document.getElementById('display').value += value;
@@ -34,6 +36,9 @@ function calculate() {
             break;
         case '-':
             result = parseFloat(operand1) - parseFloat(operand2);
+            break;
+        case '*':
+            result = parseFloat(operand1) * parseFloat(operand2);
             break;
     }
     document.getElementById('display').value = result;
