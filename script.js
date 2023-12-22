@@ -9,16 +9,12 @@ function appendToDisplay(value) {
         operand2 += value;
     }
 
-    if (value == '+') {
-        setOperator(value);
-    } else if (value == '-') {
-        setOperator(value);
-    } else if (value == '*') {
-        setOperator(value);
-    } else if (value == '/') {
-        setOperator(value);
-    } else {
-        document.getElementById('display').value += value;
+    switch (value) {
+        case '+': setOperator(value);
+        case '-': setOperator(value);
+        case '*':setOperator(value);
+        case '/': setOperator(value);
+        default: document.getElementById('display').value += value;
     }
 }
 
@@ -44,6 +40,8 @@ function calculate() {
         case '/':
             result = parseFloat(operand1) / parseFloat(operand2);
             break;
+        default:
+            result = ""
     }
     document.getElementById('display').value = result;
     operand1 = result.toString();
