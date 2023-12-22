@@ -8,23 +8,24 @@ function appendToDisplay(value) {
     } else {
         operand2 += value;
     }
-   
-    if (value == '+'){
+
+    if (value == '+') {
         setOperator(value);
-    } else if (value == '-'){
+    } else if (value == '-') {
         setOperator(value);
     }
     else {
         document.getElementById('display').value += value;
     }
-    
 }
+
 function setOperator(op) {
     if (operand1) {
         operator = op;
         document.getElementById('display').value += " " + op + " ";
     }
 }
+
 function calculate() {
     let result;
     switch (operator) {
