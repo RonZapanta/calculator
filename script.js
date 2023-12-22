@@ -8,25 +8,32 @@ function appendToDisplay(value) {
     } else {
         operand2 += value;
     }
-   
-    if (value == '+'){
+
+    if (value == '+') {
         setOperator(value);
-    } else {
+    } else if (value == '-') {
+        setOperator(value);
+    }
+    else {
         document.getElementById('display').value += value;
     }
-    
 }
+
 function setOperator(op) {
     if (operand1) {
         operator = op;
         document.getElementById('display').value += " " + op + " ";
     }
 }
+
 function calculate() {
     let result;
     switch (operator) {
         case '+':
             result = parseFloat(operand1) + parseFloat(operand2);
+            break;
+        case '-':
+            result = parseFloat(operand1) - parseFloat(operand2);
             break;
     }
     document.getElementById('display').value = result;
